@@ -11,7 +11,7 @@ import { ValueComponent } from './value/value.component';
       ValueComponent
    ],
    imports: [
-      BrowserModule,HttpClientModule
+      BrowserModule, HttpClientModule
    ],
    providers: [],
    bootstrap: [
