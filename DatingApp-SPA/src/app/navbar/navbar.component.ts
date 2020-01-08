@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../_services/auth.service';
+import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
   selector: 'app-navbar',
@@ -10,18 +11,19 @@ export class NavbarComponent implements OnInit {
 
   model: any = {};
 
-  constructor(private authService: AuthService) { }
+  constructor(public authService: AuthService, private alertify: AlertifyService) { }
 
   ngOnInit() {
 
   }
 login() {
-this.authService.Login(this.model).subscribe(next => {console.log('Success'); }, error => {console.log('Erruer authentification'); });
+this.authService.Login(this.model).subscribe(next => {this.alertify.success('Success'); }, error => {this.alertify.error('Erruer authentification'); });
 }
 loggedIn(){
   return ! !localStorage.getItem('token');
 }
 logOut() {
   localStorage.removeItem('token');
+  this.alertify.message('Vous êtes déconnecté')
 }
 }
