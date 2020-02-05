@@ -1,0 +1,57 @@
+<div class="container mt-5"> 
+  <div class="row">
+    <div class="col-sm-4"> 
+        <div class="card">
+        <img class="card-img-top img-thumbnail" src="{{user.urlPhoto}}"  alt="{{user.alias}}">
+        <div class="card-body">
+          <div>
+          <strong>Location: </strong>
+          <p> {{user.ville}}, {{user.pays}} </p>
+        </div>
+        <div>
+          <strong>Age: </strong>
+          <p> {{user.age}} ans </p>
+        </div>
+        <div>
+          <strong>Dernière connection: </strong>
+          <p> {{user.derniereConnexionn}}</p>
+        </div>
+        <div>
+          <strong>Date inscription: </strong>
+          <p> {{user.dateCreation}}</p>
+        </div>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group d-flex">
+              <button class="btn btn-primary w-100">J'aime</button>
+              <button class="btn btn-success w-100">Message</button>
+            </div>
+          </div>
+        </div> 
+    </div>
+    <div class="col sm-8">
+    <div class="tab-panel">
+      <tabset class="member-tabset"> 
+      <tab heading="A propos de {{user?.alias}}" >
+        <strong>Description</strong>
+      <p>{{user?.descrioption}}</p>
+      <strong>Je recherche</strong>
+      <p>{{user.recherche}}</p>     
+      </tab>
+      <tab heading="Interêts" >
+        <strong>Centres d'interêts</strong>
+      <p>{{user.interets}}</p>
+      </tab>
+      <tab heading="Photos" >
+        <strong>Galerie</strong>
+        <ngx-gallery [options]="galleryOptions" [images]="galleryImages"></ngx-gallery>
+      </tab>
+      <tab heading="Messages" >
+        <strong>Messages</strong>
+        <p>En cours de développement...</p>
+      </tab>
+      </tabset> 
+    </div>
+  </div>
+  </div>
+</div>
