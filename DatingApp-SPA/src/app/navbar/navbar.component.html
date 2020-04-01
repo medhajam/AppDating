@@ -20,7 +20,7 @@
       </a>
     
       <div class="dropdown-menu mt-3" *dropdownMenu>
-        <a class="dropdown-item" href="#">Modifier mon profil</a>
+        <a class="dropdown-item" [routerLink]="['/member/edit']">Modifier mon profil</a>
         <div class="dropdow-divider"></div>
         <a class="dropdown-item" (click) = 'logOut()'>Deconnexion</a>
       </div>
