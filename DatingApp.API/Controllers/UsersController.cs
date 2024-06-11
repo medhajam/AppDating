@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using DatingApp.API.Dtos;
 using System.Security.Claims;
+using System.IO;
 
 namespace DatingApp.API.Controllers
 {
@@ -29,6 +30,8 @@ namespace DatingApp.API.Controllers
         public async Task<IActionResult> GetUsers()
         {
             var users = await _repo.GetUsers();
+            var x = new File()
+            
             var results = _mapper.Map<IEnumerable<UserForListDto>>(users);
             return Ok(results);
         }
